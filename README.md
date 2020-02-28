@@ -1,3 +1,47 @@
+A products page
+A page for each single product (when you click on the product it goes to this page)
+A shopping cart page (containing a list where products appear when you click on the "Add to cart" button on the single product page), which also shows the total price of all products
+A checkout page / multi-page process which shows the total and asks for shipping and payment information (when you click on "Go to Checkout" on the shopping cart page it goes here)
+A thank you page after a checkout has been completed
+The header will show a shopping cart with the current number of items on all pages
+Additionally, during this project we will use Next.js for:
+
+Switching between different URLs ("Routing")
+Server-Side Rendering (for performance / SEO)
+
+TODOs
+ pick a product
+ decide the name of your site
+ plan the structure (Wire Framing):
+ draft for the required pages
+ products page
+ single product page
+ shopping cart page
+ checkout page/ multi step checkout
+ thank you page
+ draft the layout of each page
+ add a nav bar
+ choose a layout template for each page
+ consider the position of each object (element)
+Technical TODOs
+ create the products page
+ create an Array of products
+ when you click on a product you are redirected to the product page
+ create a product object
+ id
+ name
+ price
+ description
+ image
+
+
+
+
+
+
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
