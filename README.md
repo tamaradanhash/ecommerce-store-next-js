@@ -67,14 +67,10 @@ Additionally, during this project we will use Next.js for:
   - [ ] Layout
   - [ ] Cart
     - [ ] Show in the basket the number of products we have in the cart
+    
+  ...................................................................................
   
-
-
-
-
-
-
-
+  
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
