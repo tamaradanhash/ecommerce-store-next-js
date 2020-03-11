@@ -1,5 +1,6 @@
 import Navbar from './Navbar';
 import Head from 'next/head';
+import Link from 'next/link';
 export default function Layout(props) {
   return (
     <div>
@@ -8,10 +9,12 @@ export default function Layout(props) {
       </Head>
       <header>
         <div>
-          <a>
-            <img src="/shopping-cart.svg" />
-            my cart{' '}
-          </a>
+          <Link href="/myCart">
+            <a>
+              <img src="/shopping-cart.svg" />
+              my cart{' '}
+            </a>
+          </Link>
           <a> login </a>
         </div>
       </header>

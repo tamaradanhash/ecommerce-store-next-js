@@ -1,10 +1,11 @@
-import productsArray from '../database';
+import { getAllProducts } from '../database';
 import Layout from '../components/Layout';
 import ProductsList from '../components/ProductsList';
 
 export default function Home() {
+  const products = getAllProducts();
   function showOnlythreeProducts(id) {
-    if (id === 1 || id === 4 || id === 3) return true;
+    if (id === '1' || id === '4' || id === '3') return true;
   }
   return (
     <Layout>
@@ -14,7 +15,7 @@ export default function Home() {
           <img src="/Homi Hon.png" />
           <p>dfgushguhguhuhughduhsuhgughughu</p>
           <ProductsList
-            productsArray={productsArray.filter(product =>
+            products={products.filter(product =>
               showOnlythreeProducts(product.id),
             )}
           />

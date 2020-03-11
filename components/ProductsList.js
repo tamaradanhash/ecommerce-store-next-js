@@ -1,10 +1,9 @@
-import Product from './Product';
-export default function ProductsList({ productsArray }) {
+import SingleProduct from './SingleProduct';
+export default function ProductsList({ products }) {
   return (
     <div>
-      {' '}
-      {productsArray.map(product => {
-        return <Product product={product} />;
+      {products.map(product => {
+        return <SingleProduct product={product} />;
       })}
     </div>
   );
