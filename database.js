@@ -1,5 +1,5 @@
-import postgres from 'postgres';
 require('dotenv').config();
+const postgres = require('postgres');
 const sql = postgres(
   `postgres://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:5432/${process.env.DB_DATABASE}`,
 );
@@ -72,9 +72,9 @@ const products = [
     description: 'wooden bench with with pillows with red and pink circles',
   },
 ];
-export async function postProduct(){
+export async function postProduct() {
   await sql`
-  INSERT INTO product
+  INSERT INTO products
    (name, description, price)
   VALUES
    (${product.name}, ${product.description}, ${product.price});
@@ -83,13 +83,13 @@ export async function postProduct(){
 
 export async function getAllProducts() {
   const products = await sql`
-  SELECT * FROM ecommerec;
+  SELECT * FROM products;
   `;
   return products;
 }
-export function getProductById(id) {
-const product= await sql `
-SELECT * FROM product WHRE id=${id};
-`;
+export async function getProductById(id) {
+  const product = await sql`
+ SELECT * FROM product WHRE id=${id};
+ `;
   return product;
 }

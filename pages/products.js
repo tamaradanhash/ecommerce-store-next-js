@@ -1,8 +1,9 @@
-import { getAllProducts } from '../database';
+//import { getAllProducts } from '../database';
 import Layout from '../components/Layout';
 import ProductsList from '../components/ProductsList';
-export default function Products() {
-  const products = getAllProducts();
+export default function Products(props) {
+  const products = props.products;
+  // const products = getAllProducts();
   return (
     <Layout>
       <main>
@@ -11,4 +12,13 @@ export default function Products() {
       </main>
     </Layout>
   );
+}
+export async function getStaticProps() {
+  const { getAllProducts } = await import('../database');
+  const products = await getAllProducts();
+  return {
+    props: {
+      products: products,
+    },
+  };
 }

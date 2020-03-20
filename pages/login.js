@@ -1,9 +1,18 @@
-import { addProduct } from '../database';
-export default function Login() {
+// import { addProduct } from '../database';
+import { useState } from 'react';
+import Layout from '../components/Layout';
+export default function Login(props) {
   return (
-    <div>
-      <input type="text"> write the name of the product</input>
-      <input type="text"> write the name of the product</input>
-    </div>
+    <>
+      <Layout>
+        <main>
+          login page
+          <form>
+            product name
+            <input type="text" placeholder="please add a product name"></input>
+          </form>
+        </main>
+      </Layout>
+    </>
   );
 }

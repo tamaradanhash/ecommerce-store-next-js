@@ -1,12 +1,12 @@
-import { getAllProducts } from '../database';
+//import { getAllProducts } from '../database';
 import Layout from '../components/Layout';
 import ProductsList from '../components/ProductsList';
 
-export default function Home() {
-  const products = getAllProducts();
-  function showOnlythreeProducts(id) {
-    if (id === '1' || id === '4' || id === '3') return true;
-  }
+export default function Home(props) {
+  const products = props.products;
+  // function showOnlythreeProducts(id) {
+  //   if (id === '1' || id === '4' || id === '3') return true;
+  // }
   return (
     <Layout>
       <div className="container">
@@ -14,11 +14,7 @@ export default function Home() {
           <h1 className="title">ho ho ho ho</h1>
           <img src="/Homi Hon.png" />
           <p>dfgushguhguhuhughduhsuhgughughu</p>
-          <ProductsList
-            products={products.filter(product =>
-              showOnlythreeProducts(product.id),
-            )}
-          />
+          <ProductsList products={products} />
         </main>
       </div>
       <style jsx>
@@ -41,3 +37,16 @@ export default function Home() {
     </Layout>
   );
 }
+export async function getStaticProps() {
+  const { getAllProducts } = await import('../database');
+  const products = await getAllProducts();
+  return {
+    props: {
+      products: products,
+    },
+  };
+}
+
+// .filter(product =>
+//   showOnlythreeProducts(product.id),
+// )

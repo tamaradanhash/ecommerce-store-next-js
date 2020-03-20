@@ -9,13 +9,21 @@ export default function Layout(props) {
       </Head>
       <header>
         <div>
-          <Link href="/myCart">
-            <a>
-              <img src="/shopping-cart.svg" />
-              my cart{' '}
-            </a>
-          </Link>
-          <a> login </a>
+          <ul>
+            <li>
+              <Link href="/myCart">
+                <a>
+                  <img src="/shopping-cart.svg" />
+                  my cart{' '}
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/login">
+                <a> login </a>
+              </Link>
+            </li>
+          </ul>
         </div>
       </header>
       <Navbar />
