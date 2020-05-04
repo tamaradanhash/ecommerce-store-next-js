@@ -1,17 +1,43 @@
 import Layout from '../../components/Layout';
-import { useState } from 'react';
-import SingleProduct from '../../components/SingleProduct';
-//import { getProductById } from '../../database';
+import Router from 'next/router';
+import Cookies from 'js-cookie';
+
+function ProductDetails({ product, onButtonClick }) {
+  return (
+    // <Link href="/products/[id]" as={`/products/${product.id}`}>
+    <div key={product.id}>
+      <div>
+        <img src={product.picture} />
+      </div>
+      <h1>{product.name}</h1>
+      <p>{product.description}</p>
+      <span>price: {product.price}</span>
+      <button onClick={onButtonClick}> add to cart </button>
+    </div>
+    // </Link>
+  );
+}
 
 export default function Product(props) {
   const product = props.product;
-  // function setHiddenButton() {
-  //   return (document.getElementById('hide-button').hidden = false);
-  // }
+  if (product === 'undefined') {
+    return <div>error: this product doesn't exist</div>;
+  }
+
+  function addToCart() {
+    const item = {
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      quantity: 1,
+    };
+    Cookies.set('item', item);
+    Router.push('/myCart');
+  }
 
   return (
     <Layout>
-      <SingleProduct product={product} />
+      <ProductDetails product={product} onButtonClick={addToCart} />
     </Layout>
   );
 }
