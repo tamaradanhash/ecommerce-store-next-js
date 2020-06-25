@@ -11,9 +11,16 @@ export default function Home(props) {
     <Layout>
       <div className="container">
         <main>
-          <h1 className="title">ho ho ho ho</h1>
+          <h1 className="title">welcome to our store</h1>
           <img src="/Homi Hon.png" />
-          <p>dfgushguhguhuhughduhsuhgughughu</p>
+          <p>
+            as family owned shop we value family and we aim to make our
+            customers have the experience of beenig at home with their family.{' '}
+            <br />
+            join our family and be part of the long term realtionship that we
+            build with our customers and have the benifits of contious yearly
+            checkups and our offers
+          </p>
           <ProductsList products={products} />
         </main>
       </div>
