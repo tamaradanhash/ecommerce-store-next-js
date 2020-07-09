@@ -1,6 +1,7 @@
 //import { getAllProducts } from '../database';
 import Layout from '../components/Layout';
 import ProductsList from '../components/ProductsList';
+import ImagesSlide from '../components/ImagesSlide';
 
 export default function Home(props) {
   const products = props.products;
@@ -9,10 +10,11 @@ export default function Home(props) {
   // }
   return (
     <Layout>
+      <ImagesSlide />
       <div className="container">
         <main>
           <h1 className="title">welcome to our store</h1>
-          <img src="/Homi Hon.png" />
+          <img src="/logo.png" />
           <p>
             as family owned shop we value family and we aim to make our
             customers have the experience of beenig at home with their family.{' '}
@@ -26,14 +28,6 @@ export default function Home(props) {
       </div>
       <style jsx>
         {`
-          .container {
-            min-height: 100vh;
-            padding: 0 0.5rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-          }
           .title {
             margin: 0;
             line-height: 1.15;
@@ -41,6 +35,17 @@ export default function Home(props) {
           }
         `}
       </style>
+      <style jsx global>{`
+        html,
+        body {
+          padding: 0;
+          margin: 0;
+          font-family: 'Karla', sans-serif;
+        }
+        * {
+          box-sizing: border-box;
+        }
+      `}</style>
     </Layout>
   );
 }
