@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Router from 'next/router';
+import { Container, Row, Card, Button } from 'react-bootstrap';
 export default function SingleProduct({ product, showButton, onButtonClick }) {
   function addToCart() {
     // const item = {
@@ -13,20 +14,20 @@ export default function SingleProduct({ product, showButton, onButtonClick }) {
     console.log('test');
   }
 
-  const myButton = showButton && (
-    <button onClick={addToCart}> add to cart </button>
-  );
   return (
     <Link href="/products/[id]" as={`/products/${product.id}`}>
-      <div key={product.id}>
-        <div>
-          <img src={product.picture} />
-        </div>
-        <h1>{product.name}</h1>
-        <p>{product.description}</p>
-        <span>price: {product.price}</span>
-        {myButton}
-      </div>
+      <Card key={product.id} style={{ width: '30%', margin: '5px' }}>
+        <Card.Img variant="top" src={product.picture} rounded />
+
+        <Card.Body>
+          <Card.Title>{product.name}</Card.Title>
+          <Card.Text>{product.description}</Card.Text>
+          <span>price: {product.price}</span>
+          <Button variant="primary" onClick={addToCart}>
+            add to cart
+          </Button>
+        </Card.Body>
+      </Card>
     </Link>
   );
 }
