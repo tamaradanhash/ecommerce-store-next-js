@@ -1,4 +1,6 @@
 //import { getAllProducts } from '../database';
+//import 'bootstrap/dist/css/bootstrap.min.css';
+
 import Layout from '../components/Layout';
 import ProductsList from '../components/ProductsList';
 import ImagesSlide from '../components/ImagesSlide';
@@ -11,10 +13,10 @@ export default function Home(props) {
   return (
     <Layout>
       <ImagesSlide />
-      <div className="container">
-        <main>
+      <hr />
+      <main>
+        <div className="container">
           <h1 className="title">welcome to our store</h1>
-          <img src="/logo.png" />
           <p>
             as family owned shop we value family and we aim to make our
             customers have the experience of beenig at home with their family.{' '}
@@ -23,9 +25,30 @@ export default function Home(props) {
             build with our customers and have the benifits of contious yearly
             checkups and our offers
           </p>
-          <ProductsList products={products} />
-        </main>
-      </div>
+        </div>
+
+        <ProductsList products={products} />
+      </main>
+
+      <style jsx global>
+        {`
+          html,
+          body {
+            background: #fbf9fa;
+            padding: 0;
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+              Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+              sans-serif;
+          }
+          hr {
+            background-color: #fbf9fa;
+            border-style: none;
+            height: 2px;
+            width: 40%;
+          }
+        `}
+      </style>
       <style jsx>
         {`
           .title {
@@ -35,17 +58,6 @@ export default function Home(props) {
           }
         `}
       </style>
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: 'Karla', sans-serif;
-        }
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
     </Layout>
   );
 }
