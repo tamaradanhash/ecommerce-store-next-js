@@ -1,62 +1,57 @@
-import Navbar from './Navbar';
+import Navigator from './Navbar';
 import Head from 'next/head';
-import Link from 'next/link';
+
 export default function Layout(props) {
   return (
-    <div>
+    <div className="container">
       <Head>
-        <title>Homy Hon</title>
+        <title>Al Mutahida</title>
+        <link
+          rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossOrigin="anonymous"
+        ></link>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap"
+          rel="stylesheet"
+        ></link>
+        <link
+          rel="stylesheet"
+          href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css"
+        ></link>
       </Head>
       <header>
-        <div>
-          <ul>
-            <li>
-              <Link href="/myCart">
-                <a>
-                  <img src="/shopping-cart.svg" />
-                  my cart{' '}
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/login">
-                <a> login </a>
-              </Link>
-            </li>
-          </ul>
-        </div>
+        <img className="logo" src="/logo3.png" height="300" />
       </header>
-      <Navbar />
+      <Navigator />
       {props.children}
+      <hr />
       <footer>
-        <div>
-          <p>follow us on facebook twitter instagram</p>
-        </div>
+        <p>follow us on facebook twitter instagram</p>
       </footer>
-      <style jsx global>
+      <style jsx>
         {`
-          html,
-          body {
-            background: #ffe6c0;
+          .container {
+            background-color: #fbf9fa;
+          }
+          hr {
+            background-color: #fbf9fa;
+            border-style: none;
+            height: 2px;
+            width: 40%;
+          }
+          header {
+            height: 100px;
             padding: 0;
-            margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-              Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-              sans-serif;
           }
-          header div {
-            margin: auto;
+          .logo {
+            height: 100%;
+            width: 200px;
+            margin-left: auto;
+            margin-right: auto;
 
-            position: relative;
-            width: 900px;
-            height: 70px;
-
-            display: flex;
-          }
-          header div img {
-            position: absolute;
-            width: 30px;
-            height: 30px;
+            display: block;
           }
         `}
       </style>
